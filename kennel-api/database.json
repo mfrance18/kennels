@@ -5,19 +5,14 @@
         { "id": 3, "name": "Esme", "breed": "Pitbull" }
     ],
     "customers": [
-        {
-            "id": 1,
-            "name": "Jeff",
-            "address": "7002 Chestnut Ct"
-        }
+        { "id": 1,"name": "Jeff"},
+        { "id": 2,"name": "Matt"},
+        { "id": 3,"name": "Zack"}
     ],
     "employees": [
-        {
-            "id": 1,
-            "name": "Matt",
-            "location": "Nasville Kennels North"
-            
-        }
+        {"id": 1, "name": "Jake", "location": "Nasville Kennels North"},
+        {"id": 2, "name": "Harry", "location": "Nasville Kennels South"},
+        {"id": 3, "name": "Ashley", "location": "Nasville Kennels North"}
     ],
     "locations": [
         {

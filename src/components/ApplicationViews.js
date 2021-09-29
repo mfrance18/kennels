@@ -1,10 +1,10 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { CustomerCard } from "./Customer/Customer"
-import { EmployeeCard } from "./Employees/Employee"
 import { Home } from "../Home"
-import { LocationCard } from "./Locations/Location"
-import { AnimalCard } from "./animal/AnimalCard"
+import {LocationList} from "./Locations/LocationList"
+import {AnimalList} from "./animal/AnimalList"
+import { CustomerList } from "./Customer/CustomerList"
+import { EmployeeList } from "./Employees/EmployeeList"
 
 export const ApplicationViews = ({isAdmin, myUser}) => {
     return (
@@ -15,20 +15,20 @@ export const ApplicationViews = ({isAdmin, myUser}) => {
             </Route>
 
             {/* Render the animal list when http://localhost:3000/animals */}
-            <Route path="/animals">
-              <AnimalCard />
+            <Route exact path="/animals">
+              <AnimalList />
             </Route>
 
-            <Route path="/employees">
-              <EmployeeCard />
+            <Route exact path="/employees">
+              <EmployeeList />
             </Route>
 
-            <Route path="/locations">
-              <LocationCard />
+            <Route exact path="/locations">
+              <LocationList />
             </Route>
 
-            <Route path="/customers">
-              <CustomerCard />
+            <Route exact path="/customers">
+              <CustomerList />
             </Route>
         </>
     )

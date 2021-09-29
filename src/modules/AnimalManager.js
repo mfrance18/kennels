@@ -10,3 +10,4 @@ export const getAllAnimals = () => {
   return fetch(`${remoteURL}/animals`)
   .then(res => res.json())
 }
+

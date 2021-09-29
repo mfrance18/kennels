@@ -1,5 +1,6 @@
 import React, {useState} from "react"
-import { dateFormat } from "./Helper"
+import { DateFormat } from "./Date"
+
 
 
 
@@ -13,8 +14,8 @@ export const PropsAndState = ({ myUser }) => {
 
   return (
     <>
+      <DateFormat/>
       <h3>Welcome, {myUser.name} and {myUser.pet} </h3>
-      <p>Today is {dateFormat()}</p>
       <p>{countClicks}</p>
       <button onClick={(handleClick)}>Click Me</button>
     </>
