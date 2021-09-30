@@ -7,7 +7,7 @@ import "./index.css"
 ReactDOM.render(
     <React.StrictMode>
         <Router>
-            <Kennel />
+             <Kennel />   
         </Router>
     </React.StrictMode>,
     document.getElementById("root")
