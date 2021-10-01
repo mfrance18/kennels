@@ -1,22 +1,32 @@
 import { useState, useEffect } from "react";
-import { LocationCard } from "./Location";
-import { getAllLocations } from "../../modules/LocationManager";
+import { LocationCard } from "./LocationCard";
+import { getAllLocations, deleteLocation} from "../../modules/LocationManager";
 
 export const LocationList = () =>{
-    const [location, setLocation] = useState([])
+    const [locations, setLocations] = useState([])
     
     const getLocations = () => {
         return getAllLocations().then(response => {
-         setLocation(response)
+         setLocations(response)
         })
     }   
+
+    const handleDeleteLocation = id => {
+        deleteLocation(id)
+        .then(() => getAllLocations().then(setLocations))
+    }
+
     useEffect(() =>{
         getLocations()
     }, [])
 
     return(
-        <div>
-            {location.map(location => <LocationCard key={location.id} location={location}/>)}
+        <div className="container-cards">
+            {locations.map(location => 
+            <LocationCard 
+            key={location.id} 
+            location={location}
+            handleDeleteLocation={handleDeleteLocation}/>)}
         </div>
     )
 }

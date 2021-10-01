@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { EmployeeCard } from "../Employees/Employee"
-import { getAllEmployees} from "../../modules/EmployeeManager"
+import { EmployeeCard } from "../Employees/EmployeeCard"
+import { getAllEmployees, AllEmployees, deleteEmployee } from "../../modules/EmployeeManager"
+
 
 export const EmployeeList = () => {
     const [employee, setEmployee] = useState([])
@@ -8,24 +9,30 @@ export const EmployeeList = () => {
     const getEmployees = () => {
         getAllEmployees().then(response => {
             setEmployee(response)
-        }) 
+        })
+    }
+
+    const handleDeleteEmployee = id => {
+        deleteEmployee(id)
+            .then(() =>
+                getAllEmployees()
+                    .then(setEmployee))
     }
 
     useEffect(() => {
         getEmployees()
     }, [])
-    
+
     return (
-        <div>
-            {employee.map(employee => <EmployeeCard key={employee.id} employee={employee}/>)}
+        <div className="container-cards">
+            {employee.map(employee => <EmployeeCard
+                key={employee.id}
+                employee={employee}
+                handleDeleteEmployee={handleDeleteEmployee} />)}
         </div>
     )
 
-}   
-
-
-
-
+}
 
 
 
@@ -34,11 +41,16 @@ export const EmployeeList = () => {
 
 //     const getEmployees = () => {
 //         getAllEmployees().then(response => {
-//             console.log(employee, "response")
-//             // debugger
 //             setEmployee(AllEmployees)
-//             console.log(employee)
+//             console.log(AllEmployees)
 //         })
+//     }
+
+//     const handleDeleteEmployee = (id) => {
+//         deleteEmployee(id)
+//             .then(() =>
+//                 getAllEmployees()
+//                     .then(setEmployee))
 //     }
 
 //     useEffect(() => {
@@ -47,13 +59,14 @@ export const EmployeeList = () => {
 
 
 //     return (
-//         <>
-//         {
-//             employee == undefined ? 
-//             <div className="container-cards">
-//                 {employee?.map(employee => <EmployeeCard key={employee.id} employee={employee} />)}
-//             </div> : <p>waiting for text</p>
-//         }
-//         </>
+
+//         <div className="container-cards">
+//             {employee?.map(employee => <EmployeeCard
+//                 key={employee.id}
+//                 employee={employee}
+//                 handleDeleteEmployee={handleDeleteEmployee} />)}
+//         </div>
+
+
 //     )
 // }
