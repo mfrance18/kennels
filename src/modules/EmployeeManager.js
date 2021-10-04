@@ -1,20 +1,11 @@
 const remoteURL = "http://localhost:5002"
-export let AllEmployees = []
-export const getAllEmployees = () => {
-   return fetch(`${remoteURL}/employees`)
-    .then(res => res.json())
-    // .then(res => {
-    //     res.map(e => {fetch(`https://randomuser.me/api?inc=name,picture`)
-    //     .then(response => response.json())
-    //     .then(response => {e.image=response.results[0].picture.large
-    //         e.name = response.results[0].name.first
-    //         })
-    //     })
-    //     AllEmployees = res
-    
-    // })
-}
 
+
+export const getAllEmployees = () => {
+   return fetch(`${remoteURL}/employees?_expand=location`)
+    .then(res => res.json())
+
+}
 export const deleteEmployee = (id) => {
     return fetch(`${remoteURL}/employees/${id}`,{
         method: "DELETE"
@@ -24,6 +15,12 @@ export const deleteEmployee = (id) => {
     })
 }
 
-//`https://randomuser.me/api?inc=picture`
-
-//`${remoteURL}/employees`
+export const addEmployee = (newEmployee) => {
+    return fetch(`${remoteURL}/employees`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEmployee)
+    }).then(response => response.json())
+  }

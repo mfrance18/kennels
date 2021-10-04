@@ -14,19 +14,33 @@ textarea {
 }
 
 button {
-  color: #404040;
-  font-family: "Comfortaa", Arial, sans-serif;
+  max-width: 9em;
+  padding: .5em;
+  margin: .3em auto;
+  margin-right: 4px;
+  background-color: cornflowerblue;
+  border: none;
+  color: cornsilk;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 14px;
-  line-height: 1.5;
-  margin-right: 5px;  
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
   }
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+h3{
+  margin-left: 10px;
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }

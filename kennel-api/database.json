@@ -2,10 +2,10 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles",
+      "name": "Peggie",
       "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
+      "locationId": 1,
+      "customerId": 1
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
     },
     {
       "id": 3,
-      "name": "Winston",
+      "name": "winston",
       "breed": "Basset Hound",
       "customerId": 3,
       "locationId": 1
@@ -25,32 +25,35 @@
   "customers": [
     {
       "id": 1,
-      "name": "Jeff"
+      "name": "Jeff",
+      "email": "jeff@gmail.com"
     },
     {
       "id": 2,
-      "name": "Matt"
+      "name": "Matt",
+      "email": "matt@gmail.com"
     },
     {
       "id": 3,
-      "name": "Zack"
+      "name": "Zack",
+      "email": "zack@gmail.com"
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Jake",
-      "location": "Nasville Kennels North"
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Harry",
-      "location": "Nasville Kennels South"
+      "locationId": 2
     },
     {
       "id": 3,
       "name": "Ashley",
-      "location": "Nasville Kennels North"
+      "locationId": 1
     }
   ],
   "locations": [

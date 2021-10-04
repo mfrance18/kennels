@@ -3,6 +3,7 @@ import { getAnimalById } from '../../modules/AnimalManager';
 import { deleteAnimal } from '../../modules/AnimalManager';
 import './AnimalDetail.css';
 import { useParams, useHistory } from "react-router-dom"
+import { firstLetterCase } from '../../modules/helpers';
 
 export const AnimalDetail = () => {
   const [animal, setAnimal] = useState({ name: "", breed: "", location: "", customer: ""});
@@ -29,7 +30,7 @@ export const AnimalDetail = () => {
     getAnimalById(animalId)
       .then(animal => {
         setAnimal({
-          name: animal.name,
+          name: firstLetterCase(animal.name),
           breed: animal.breed,
           location: animal.location.name,
           customer: animal.customer.name

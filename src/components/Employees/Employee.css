@@ -5,8 +5,11 @@
   }
   
   .employee {
-      flex-basis: 28%;
-      margin: 1em;
-      padding: 1em;
-      border: 1px solid goldenrod;
+    max-width: 40em;
+    padding: 4px;
+    margin-bottom: 20px;
+    border: 0 none;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    background: aliceblue;
   }
