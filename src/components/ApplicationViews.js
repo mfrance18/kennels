@@ -17,22 +17,15 @@ import { Redirect } from "react-router"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 
-export const ApplicationViews = ({ isAdmin, myUser }) => {
-
-  const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
-
-  const setAuthUser = (user) => {
-    sessionStorage.setItem("kennel_customer", JSON.stringify(user))
-    setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
-  }
+export const ApplicationViews = ({isAuthenticated, setAuthUser}) => {
 
 
   return (
 
     <>
       {/* Render the location list when http://localhost:3000/ */}
-      <Route exact path="/">
-        <Home isAdmin={isAdmin} myUser={myUser} />
+      <Route  exact path="/">
+        <Home  />
       </Route>
 
       {/* Render the animal list when http://localhost:3000/animals */}
@@ -40,7 +33,7 @@ export const ApplicationViews = ({ isAdmin, myUser }) => {
         {isAuthenticated ? <AnimalList /> : <Redirect to="/login" />}
       </Route>
 
-      <Route path="/login">
+      <Route exact path="/login">
         <Login setAuthUser={setAuthUser} />
       </Route>
 

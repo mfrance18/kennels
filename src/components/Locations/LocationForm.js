@@ -42,9 +42,7 @@ export const LocationForm = () => {
                     <label htmlFor="name">Location name:</label>
                     <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Location name" value={location.name} />
                 </div>
-            </fieldset>
-
-            <fieldset>
+         
                 <div className="form-group">
                     <label htmlFor="address">Address:</label>
                     <input type="text" id="address" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Address" value={location.address} />

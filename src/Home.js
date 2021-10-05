@@ -1,25 +1,33 @@
-import React from "react";
-import { PropsAndState } from '../src/components/PropsAndState'
+import React, { useState, useEffect } from "react";
+import { AnimalSpotlight } from "./components/animal/AnimalSpotlight"
+import { getRandomId } from "./modules/AnimalManager"
+import { PropsAndState } from "./components/PropsAndState"
 
-export const Home = ({ isAdmin, myUser }) => (
+export const Home = () => {
+  const [spotlightId, setSpotlightId] = useState(0);
+
+  const refreshSpotlightAnimal = () => {
+    getRandomId().then(setSpotlightId);
+  };
+
+  useEffect(() => {
+    refreshSpotlightAnimal();
+  }, []);
+
+  return (
     <>
-        {isAdmin ?
-            <>
-
-                <p>You are Admin</p>
-
-                <h2>Nashville Kennels</h2>
-                <small>Loving care when you're not there.</small>
-
-                <address>
-                    <div>Visit Us at the Nashville North Location</div>
-                    <div>500 Puppy Way</div>
-                </address>
-                <PropsAndState myUser={myUser} />
-            </>
-            :
-            <p>You are not Admin</p>
-        }
-
+      <address>
+        Visit Us at the Nashville North Location
+        <br />
+        500 Puppy Way
+      </address>
+      <PropsAndState />
+      <h1>Animal Spotlight</h1>
+      {
+        spotlightId && <AnimalSpotlight animalId={spotlightId} />
+      }
+      <button onClick={refreshSpotlightAnimal}>Reload &#x27f3;</button>
     </>
-)
+  );
+};
+

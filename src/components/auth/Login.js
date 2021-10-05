@@ -47,8 +47,7 @@ export const Login = ({setAuthUser}) => {
                             className="form-control"
                             placeholder="Email address"
                             required autoFocus />
-                    </fieldset>
-                    <fieldset>
+                    
                         <button type="submit">
                             Sign in
                         </button>

@@ -1,11 +1,20 @@
 import React, {useState} from "react"
+import { useEffect } from "react/cjs/react.development"
 import { DateFormat } from "./Date"
 import { QuoteCard } from "./Quotes/Quote"
 
 
+const GetUser = () => {
+  let user = sessionStorage.getItem("user_name")
+  
+  return (
+    <div>
+    <h2>Welcome, {user}!</h2>
+  </div>
+  )
+}
 
-
-export const PropsAndState = ({ myUser }) => {
+export const PropsAndState = ({  }) => {
     let [countClicks, setCountClicks] = useState(0)
 
     const handleClick = () => {
@@ -16,7 +25,7 @@ export const PropsAndState = ({ myUser }) => {
   return (
     <>
       <DateFormat/>
-      <h3>Welcome, {myUser.name} and {myUser.pet} </h3>
+      <GetUser />
       <QuoteCard />
       <p>{countClicks}</p>
       <button onClick={(handleClick)}>Click Me</button>

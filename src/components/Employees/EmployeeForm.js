@@ -54,9 +54,7 @@ export const EmployeeForm = () => {
                 <label htmlFor="name">Employee name:</label>
                 <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee name" value={employee.name} />
             </div>
-        </fieldset>
-
-        <fieldset>
+   
 				<div className="form-group">
 					<label htmlFor="location">Assign to location: </label>
 					<select value={employee.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >

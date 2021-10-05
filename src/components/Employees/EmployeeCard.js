@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import "./Employee.css"
 
-export const EmployeeCard = ({ employee, handleDeleteEmployee, location }) => {
+export const EmployeeCard = ({ employee, handleDeleteEmployee }) => {
 
     return (
         <section className="employee" alt="Employee image">
