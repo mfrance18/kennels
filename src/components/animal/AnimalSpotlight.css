@@ -1,15 +1,9 @@
-.animal-spotlight {
-    max-width: 400px;
-    display: flex;
-    border: 1px dashed gray;
-    padding: 10px;
-  }
-  
-  .animal-spotlight img {
-    width: 200px;
-    margin-right: 20px;
-  }
-  
-  .animal-spotlight p {
-    color: black;
+.animal_spotlight {
+  max-width: 40em;
+  padding: 4px;
+  margin-bottom: 20px;
+  border: 0 none;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  background: aliceblue;
   }

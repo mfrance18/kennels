@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { NavBar } from "./nav/NavBar"
 import { ApplicationViews } from "./ApplicationViews"
 import "./Kennel.css"
+import { Footer } from "./footer/Footer"
 
 
 
@@ -26,7 +27,7 @@ export const Kennel = () => {
         <>
             <NavBar clearUser={clearUser} isAuthenticated={isAuthenticated}/>
             <ApplicationViews setAuthUser={setAuthUser} isAuthenticated={isAuthenticated} />
-
+            <Footer />
         </>
     )
 }

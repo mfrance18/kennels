@@ -16,17 +16,18 @@ export const Home = () => {
 
   return (
     <>
-      <address>
-        Visit Us at the Nashville North Location
-        <br />
-        500 Puppy Way
-      </address>
+    <div className="home">
+    
       <PropsAndState />
+      </div>
+
+      <div className="spotLight">
       <h1>Animal Spotlight</h1>
       {
         spotlightId && <AnimalSpotlight animalId={spotlightId} />
       }
-      <button onClick={refreshSpotlightAnimal}>Reload &#x27f3;</button>
+      <button className="reload" onClick={refreshSpotlightAnimal}>Reload &#x27f3;</button>
+      </div>
     </>
   );
 };

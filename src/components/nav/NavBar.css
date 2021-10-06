@@ -8,3 +8,19 @@
     flex-basis: 20%;
     list-style-type: none;
 }
+
+.logout {
+    max-width: 9em;
+    padding: .5em;
+    margin-right: 4px;
+    background-color: cornflowerblue;
+    border: none;
+    color: cornsilk;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 2px;
+    width: 100%;
+    cursor: pointer;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css"
+import { GetUser } from "../PropsAndState";
+
 
 export const NavBar = ({ clearUser, isAuthenticated }) => {
     const history = useHistory()
@@ -11,7 +13,12 @@ export const NavBar = ({ clearUser, isAuthenticated }) => {
     }
 
     return (
+        <>
+        <GetUser />
+        
+    
         <ul className="navbar">
+
             <li className="navbar__item">
                 <Link className="navbar__link" to="/"> Home </Link>
             </li>
@@ -20,6 +27,7 @@ export const NavBar = ({ clearUser, isAuthenticated }) => {
                     <Link className="navbar__link" to="/animals"> Animals </Link>
                 </li>
                 : null}
+                
             <li className="navbar__item">
                 <Link className="navbar__link" to="/locations"> Locations </Link>
             </li>
@@ -35,11 +43,14 @@ export const NavBar = ({ clearUser, isAuthenticated }) => {
                 : null}
             {isAuthenticated
                 ? <li className="navbar__item">
-                    <button className="navbar__link" onClick={handleLogout}> Logout </button>
+                    <button className="logout" onClick={handleLogout}> Logout </button>
                 </li>
                 : <li className="navbar__item">
                     <Link className="navbar__link" to="/login">Login</Link>
                 </li>}
+
+                
         </ul>
+        </>
     );
 };
